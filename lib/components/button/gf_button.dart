@@ -763,6 +763,7 @@ class GFButton extends StatefulWidget {
     this.highlightColor,
     this.splashColor,
     this.elevation = 0.0,
+    this.borderRadius = 0.0,
     this.focusElevation = 4.0,
     this.hoverElevation = 4.0,
     this.highlightElevation = 1.0,
@@ -1253,7 +1254,7 @@ class _GFButtonState extends State<GFButton> {
             borderRadius: widget.shape == GFButtonShape.pills
                 ? BorderRadius.circular(50)
                 : widget.shape == GFButtonShape.standard
-                    ? BorderRadius.circular(5)
+                    ? BorderRadius.circular(borderRadius != 0 ? borderRadius :5)
                     : BorderRadius.zero,
             boxShadow: [
               widget.boxShadow == null && widget.buttonBoxShadow == true
