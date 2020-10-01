@@ -836,6 +836,9 @@ class GFButton extends StatefulWidget {
 
   /// The elevation for the button's [Material] when the button is [enabled] but not pressed.
   final double elevation;
+  
+  /// The elevation for the button's [Material] when the button is [enabled] but not pressed.
+  final double borderRadius;
 
   /// The elevation for the button's [Material] when the button is [enabled] and a pointer is hovering over it.
   final double hoverElevation;
@@ -1254,7 +1257,7 @@ class _GFButtonState extends State<GFButton> {
             borderRadius: widget.shape == GFButtonShape.pills
                 ? BorderRadius.circular(50)
                 : widget.shape == GFButtonShape.standard
-                    ? BorderRadius.circular(borderRadius != 0 ? borderRadius :5)
+                    ? BorderRadius.circular(widget.borderRadius != 0 ? widget.borderRadius :5)
                     : BorderRadius.zero,
             boxShadow: [
               widget.boxShadow == null && widget.buttonBoxShadow == true
